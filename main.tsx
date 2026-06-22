@@ -17,8 +17,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  const featured = PRODUCTS.filter((p: any) => p.featured).slice(0, 8);
-
+  const featured = (PRODUCTS as any[])?.filter((p) => p?.featured)?.slice(0, 8) || [];
   return (
     <div>
       {/* HERO */}
